@@ -683,57 +683,57 @@ const HUB_DATA = {
   mumbai: {
     city: 'Mumbai & Western Zone Depot',
     address: 'Warehouse Complex #14-B, Near Mankoli Flyover, Bhiwandi, Mumbai - 421302',
-    phone: '+91 98201 54321 / 022-2890-XXXX',
-    email: 'mumbai.hub@globallogistics.in',
+    phone: '+91 81900 03616 / +91 80567 77223',
+    email: 'support@globallogist.com',
     features: '50-Truck Fleet Parking, Hydraulic Ramp Loading Bay, 24/7 CCTV Security Yard'
   },
   delhi: {
     city: 'Delhi NCR & Northern Hub',
     address: 'Logistics Park, Kherki Daula, Near Toll Plaza, NH-48, Gurugram, NCR - 122004',
-    phone: '+91 98112 54321 / 0124-459-XXXX',
-    email: 'delhi.hub@globallogistics.in',
+    phone: '+91 81900 03616 / +91 80567 77223',
+    email: 'support@globallogist.com',
     features: 'Central Inspection Center, Covered Storage Shed, Inter-State Dispatch Terminal'
   },
   bangalore: {
     city: 'Bengaluru & South Hub',
     address: 'Plot 88, Electronic City Phase 2, Hosur Road, Bengaluru, Karnataka - 560100',
-    phone: '+91 99801 54321 / 080-412-XXXX',
-    email: 'bangalore.hub@globallogistics.in',
+    phone: '+91 81900 03616 / +91 80567 77223',
+    email: 'support@globallogist.com',
     features: 'Tech City Dedicated Receiving Bay, Luxury Car Container Berth, Direct EV Charging Bay'
   },
   hyderabad: {
     city: 'Hyderabad & Deccan Hub',
     address: 'Survey 210, Outer Ring Road Logistics Zone, Shamshabad, Hyderabad - 501218',
-    phone: '+91 97011 54321 / 040-240-XXXX',
-    email: 'hyderabad.hub@globallogistics.in',
+    phone: '+91 81900 03616 / +91 80567 77223',
+    email: 'support@globallogist.com',
     features: 'Express Transit Corridor Junction, Wheel-Locking Verification Station'
   },
   chennai: {
     city: 'Chennai Coastal & Auto Hub',
     address: 'Sriperumbudur Auto Cluster Park, Bangalore Highway, Chennai, Tamil Nadu - 602105',
-    phone: '+91 94441 54321 / 044-271-XXXX',
-    email: 'chennai.hub@globallogistics.in',
+    phone: '+91 81900 03616 / +91 80567 77223',
+    email: 'support@globallogist.com',
     features: 'OEM Dealership Transport Berth, Southern Express Multi-Car Staging Yard'
   },
   pune: {
     city: 'Pune Auto Hub',
     address: 'Chakan Industrial Logistics Corridor Phase 2, Chakan, Pune, Maharashtra - 410501',
-    phone: '+91 98901 54321 / 020-672-XXXX',
-    email: 'pune.hub@globallogistics.in',
+    phone: '+91 81900 03616 / +91 80567 77223',
+    email: 'support@globallogist.com',
     features: 'Auto Corridor Express Loading Deck, Covered Two-Wheeler Crate Bay'
   },
   kolkata: {
     city: 'Kolkata & Eastern Hub',
     address: 'NH-16 Kolkata-Delhi Expressway, Dankuni Industrial Complex, Hooghly - 712311',
-    phone: '+91 98301 54321 / 033-266-XXXX',
-    email: 'kolkata.hub@globallogistics.in',
+    phone: '+91 81900 03616 / +91 80567 77223',
+    email: 'support@globallogist.com',
     features: 'East India Gateway Depot, Long Haul Transshipment Yard'
   },
   ahmedabad: {
     city: 'Ahmedabad & Gujarat Hub',
     address: 'Sanand Industrial GIDC Logistics Park, Sanand-Viramgam Highway, Ahmedabad - 382170',
-    phone: '+91 98791 54321 / 079-297-XXXX',
-    email: 'ahmedabad.hub@globallogistics.in',
+    phone: '+91 81900 03616 / +91 80567 77223',
+    email: 'support@globallogist.com',
     features: 'Gujarat Multi-Deck Carrier Berth, Enclosed Car Protection Facility'
   }
 };
@@ -862,7 +862,7 @@ function initQuoteForm() {
           `Date: ${transportDate}\n\n` +
           `Please provide the final quotation and slot availability.`
         );
-        waConfirmBtn.href = `https://wa.me/919820154321?text=${waText}`;
+        waConfirmBtn.href = `https://wa.me/918190003616?text=${waText}`;
       }
 
       // Show confirmation modal
