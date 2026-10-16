@@ -458,6 +458,17 @@ p {
   flex-shrink: 0;
 }
 
+.navbar-main .brand-logo {
+  position: relative;
+  left: -80px;
+}
+
+@media (max-width: 1200px) {
+  .navbar-main .brand-logo {
+    left: 0;
+  }
+}
+
 
 /* Navbar logo image */
 .brand-logo-img {
