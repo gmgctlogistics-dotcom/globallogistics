@@ -509,8 +509,24 @@ p {
   }
 }
 
+/* Default for all pages: Logo stays neatly inside navigation bar */
+.navbar-main .brand-logo {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.brand-logo-img {
+  height: 75px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Home Page ONLY: Hero floating position when at top on large screens */
 @media (min-width: 1400px) {
-  .navbar-main .brand-logo {
+  body.page-home .navbar-main .brand-logo {
     position: absolute;
     left: calc((100vw - 1360px) / 4);
     transform: translateX(-50%);
@@ -519,34 +535,25 @@ p {
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .brand-logo-img {
+  body.page-home .navbar-main .brand-logo-img {
     height: 185px;
-    width: auto;
-    display: block;
-    object-fit: contain;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .navbar-main.scrolled .brand-logo {
+  body.page-home .navbar-main.scrolled .brand-logo {
     position: relative;
     top: 0;
     left: 0;
     transform: none;
   }
 
-  .navbar-main.scrolled .brand-logo-img {
+  body.page-home .navbar-main.scrolled .brand-logo-img {
     height: 75px;
   }
 }
 
 @media (max-width: 1399px) {
-  .navbar-main .brand-logo {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
   .brand-logo-img {
-    height: 85px;
+    height: 80px;
   }
 }
 
