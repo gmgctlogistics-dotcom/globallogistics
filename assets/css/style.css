@@ -481,19 +481,25 @@ p {
   height: 29.333%;
   z-index: 1;
   border-radius: 50%;
-  object-fit: cover;
   pointer-events: none;
-  animation: spinGlobe 14s linear infinite;
+  background-image: url('../images/logo-globe-texture.png');
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  animation: earthSpinLeftToRight 12s linear infinite;
+  transform: rotate(-12deg);
   transform-origin: 50% 50%;
-  will-change: transform;
+  box-shadow: inset 2px 2px 8px rgba(255, 255, 255, 0.8), inset -4px -4px 10px rgba(11, 30, 56, 0.5);
+  border: 1px solid rgba(0, 180, 255, 0.35);
+  overflow: hidden;
+  will-change: background-position;
 }
 
-@keyframes spinGlobe {
+@keyframes earthSpinLeftToRight {
   from {
-    transform: rotate(0deg);
+    background-position: 0 0;
   }
   to {
-    transform: rotate(360deg);
+    background-position: 200% 0;
   }
 }
 
