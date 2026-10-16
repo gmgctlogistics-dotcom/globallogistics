@@ -458,6 +458,51 @@ p {
   flex-shrink: 0;
 }
 
+/* Animated Brand Logo with Rotating Globe */
+.brand-logo-animated {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.brand-logo-animated .brand-logo-img,
+.brand-logo-animated .drawer-logo-img,
+.brand-logo-animated .footer-logo-img {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.brand-logo-animated .logo-globe-spin {
+  position: absolute;
+  top: 22.667%;
+  left: 33.333%;
+  width: 29.333%;
+  height: 29.333%;
+  z-index: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  pointer-events: none;
+  animation: spinGlobe 14s linear infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+@keyframes spinGlobe {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo-animated .logo-globe-spin {
+    animation: none;
+  }
+}
+
 @media (min-width: 1400px) {
   .navbar-main .brand-logo {
     position: absolute;
