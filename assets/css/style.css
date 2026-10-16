@@ -461,26 +461,40 @@ p {
 .navbar-main .brand-logo {
   position: relative;
   left: -80px;
+  top: 145px;
+  z-index: 50;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-logo-img {
+  height: 240px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-main.scrolled .brand-logo {
+  top: 0;
+  left: 0;
+}
+
+.navbar-main.scrolled .brand-logo-img {
+  height: 85px;
 }
 
 @media (max-width: 1200px) {
   .navbar-main .brand-logo {
     left: 0;
+    top: 0;
+  }
+  .brand-logo-img {
+    height: 85px;
   }
 }
 
-
-/* Navbar logo image */
-.brand-logo-img {
-  height: 122px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  transition: opacity 0.2s ease;
-}
-
 .brand-logo:hover .brand-logo-img {
-  opacity: 0.85;
+  opacity: 0.88;
 }
 
 /* Footer logo image (transparent, white glows nicely on dark bg) */
