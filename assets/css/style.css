@@ -579,13 +579,14 @@ p {
   opacity: 0.88;
 }
 
-/* Footer logo image (transparent, white glows nicely on dark bg) */
+/* Footer logo image (same prominent size as brand logo) */
 .footer-logo-img {
-  height: 90px;
+  height: 185px;
   width: auto;
+  max-width: 100%;
   display: block;
   object-fit: contain;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-brand-logo {
@@ -1336,8 +1337,8 @@ p {
 
 .about-floating-card {
   position: absolute;
-  bottom: -24px;
-  right: -24px;
+  bottom: 24px;
+  right: 24px;
   background: rgba(14, 35, 66, 0.92);
   backdrop-filter: blur(16px);
   padding: 1.25rem 1.6rem;
