@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://globallogist.com/sitemap.xml
+Sitemap: https://globallogistcs.com/sitemap.xml
