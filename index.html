@@ -34,7 +34,7 @@
     rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.3">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.4">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -944,148 +944,145 @@
         </p>
       </div>
 
-      <div class="custom-quote-wrap">
+      <!-- Main Calculator / Custom Quote Box (Full width 1060px with all 4 boxes in one line) -->
+      <div class="calc-box-wrap">
 
-        <!-- Left: Route selector + CTA -->
-        <div class="quote-selector-col">
-          <div class="quote-selector-card">
-            <p class="quote-selector-label">Tell us your requirement — we'll call you with your rate in minutes</p>
+        <!-- 4 Step Route & Vehicle Selectors (All 4 in ONE line) -->
+        <div class="calc-steps-grid">
+          <div class="calc-field-group">
+            <label class="calc-field-label" for="calcOrigin">1. Origin City</label>
+            <select id="calcOrigin" class="calc-select">
+              <option value="delhi" selected>Delhi NCR (Gurugram / Noida)</option>
+              <option value="mumbai">Mumbai &amp; MMR</option>
+              <option value="bangalore">Bengaluru</option>
+              <option value="pune">Pune</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="chennai">Chennai</option>
+              <option value="kolkata">Kolkata</option>
+              <option value="ahmedabad">Ahmedabad</option>
+              <option value="custom">Other City / Custom KM</option>
+            </select>
+          </div>
 
-            <div class="calc-steps-grid" style="margin-bottom: 1.5rem;">
-              <div class="calc-field-group">
-                <label class="calc-field-label" for="calcOrigin">1. Origin City</label>
-                <select id="calcOrigin" class="calc-select">
-                  <option value="delhi" selected>Delhi NCR (Gurugram / Noida)</option>
-                  <option value="mumbai">Mumbai &amp; MMR</option>
-                  <option value="bangalore">Bengaluru</option>
-                  <option value="pune">Pune</option>
-                  <option value="hyderabad">Hyderabad</option>
-                  <option value="chennai">Chennai</option>
-                  <option value="kolkata">Kolkata</option>
-                  <option value="ahmedabad">Ahmedabad</option>
-                  <option value="custom">Other City</option>
-                </select>
-              </div>
+          <div class="calc-field-group">
+            <label class="calc-field-label" for="calcDest">2. Destination Hub</label>
+            <select id="calcDest" class="calc-select">
+              <option value="delhi">Delhi NCR</option>
+              <option value="mumbai" selected>Mumbai &amp; MMR</option>
+              <option value="bangalore">Bengaluru</option>
+              <option value="pune">Pune</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="chennai">Chennai</option>
+              <option value="kolkata">Kolkata</option>
+              <option value="ahmedabad">Ahmedabad</option>
+              <option value="custom">Other City / Custom KM</option>
+            </select>
+          </div>
 
-              <div class="calc-field-group">
-                <label class="calc-field-label" for="calcDest">2. Destination City</label>
-                <select id="calcDest" class="calc-select">
-                  <option value="delhi">Delhi NCR</option>
-                  <option value="mumbai" selected>Mumbai &amp; MMR</option>
-                  <option value="bangalore">Bengaluru</option>
-                  <option value="pune">Pune</option>
-                  <option value="hyderabad">Hyderabad</option>
-                  <option value="chennai">Chennai</option>
-                  <option value="kolkata">Kolkata</option>
-                  <option value="ahmedabad">Ahmedabad</option>
-                  <option value="custom">Other City</option>
-                </select>
-              </div>
+          <div class="calc-field-group">
+            <label class="calc-field-label" for="calcVehicle">3. Vehicle Class</label>
+            <select id="calcVehicle" class="calc-select">
+              <option value="hatchback">Hatchback (Swift, Tiago, i20)</option>
+              <option value="sedan" selected>Sedan (City, Verna, Virtus)</option>
+              <option value="suv">Compact SUV (Creta, Seltos, Brezza)</option>
+              <option value="luxury">Luxury / Full SUV (BMW, Fortuner)</option>
+              <option value="two-wheeler">Two-Wheeler / Superbike</option>
+            </select>
+          </div>
 
-              <div class="calc-field-group">
-                <label class="calc-field-label" for="calcVehicle">3. Vehicle Class</label>
-                <select id="calcVehicle" class="calc-select">
-                  <option value="hatchback">Hatchback (Swift, Tiago, i20)</option>
-                  <option value="sedan" selected>Sedan (City, Verna, Virtus)</option>
-                  <option value="suv">Compact SUV (Creta, Seltos, Brezza)</option>
-                  <option value="luxury">Luxury / Full SUV (BMW, Fortuner)</option>
-                  <option value="two-wheeler">Two-Wheeler / Superbike</option>
-                </select>
-              </div>
-
-              <div class="calc-field-group">
-                <label class="calc-field-label" for="calcCarrier">4. Carrier Type</label>
-                <select id="calcCarrier" class="calc-select">
-                  <option value="open" selected>Open Multi-Car Carrier</option>
-                  <option value="enclosed">Enclosed Covered Container</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Route display (JS-driven, no price shown) -->
-            <div class="quote-route-display" id="quoteRouteDisplay">
-              <span id="summaryRouteName">Delhi NCR &rarr; Mumbai</span>
-              <span class="route-badge">Route Selected</span>
-            </div>
-
-            <!-- Call & WhatsApp CTA -->
-            <div class="quote-cta-row">
-              <a href="tel:+918190003616" class="btn btn-primary quote-call-btn" id="calcBookBtn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                Call Now for My Rate
-              </a>
-              <a href="https://wa.me/918190003616?text=Hi%2C%20I%20need%20a%20vehicle%20transport%20quote" target="_blank" rel="noopener" class="btn quote-whatsapp-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-                </svg>
-                WhatsApp Quote
-              </a>
-            </div>
-            <p class="quote-note">📞 Our team responds within <strong>5 minutes</strong> during business hours</p>
+          <div class="calc-field-group">
+            <label class="calc-field-label" for="calcCarrier">4. Carrier Configuration</label>
+            <select id="calcCarrier" class="calc-select">
+              <option value="open" selected>Open Multi-Car Carrier</option>
+              <option value="enclosed">Enclosed Covered Container</option>
+            </select>
           </div>
         </div>
 
-        <!-- Right: 4 Trust Reasons -->
-        <div class="quote-reasons-col">
-          <h3 class="quote-reasons-title">Why We Don't Show Fixed Rates</h3>
-          <div class="quote-reason-list">
-            <div class="quote-reason-item">
-              <div class="reason-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <div class="reason-text">
-                <h4>Every Route is Unique</h4>
-                <p>Distance, road conditions, toll zones, and highway access all affect the true cost of safe vehicle transport.</p>
-              </div>
+        <!-- Custom Distance Input (Revealed if 'custom' is selected) -->
+        <div class="calc-custom-km-row" id="calcCustomKmWrap" style="display: none;">
+          <div class="calc-field-group" style="max-width: 420px; margin-bottom: 1.5rem;">
+            <label class="calc-field-label" for="calcCustomKm">Enter One-Way Distance (Kilometers)</label>
+            <div class="form-input-wrap">
+              <input type="number" id="calcCustomKm" class="calc-input" placeholder="e.g. 1200" min="50" max="5000" value="1200">
             </div>
-            <div class="quote-reason-item">
-              <div class="reason-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-              </div>
-              <div class="reason-text">
-                <h4>Vehicle-Specific Handling</h4>
-                <p>A hatchback and a luxury supercar need completely different equipment, loading procedures, and insurance — so they cost differently.</p>
-              </div>
-            </div>
-            <div class="quote-reason-item">
-              <div class="reason-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              </div>
-              <div class="reason-text">
-                <h4>Best Rate for You — Not Average</h4>
-                <p>We negotiate season-specific and volume-based rates. A published price is always higher than what we can offer you directly on a call.</p>
-              </div>
-            </div>
-            <div class="quote-reason-item">
-              <div class="reason-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div class="reason-text">
-                <h4>Instant Quote in 5 Minutes</h4>
-                <p>No forms, no waiting days. Our dispatch team gives you a firm, all-inclusive price on a single call — with transit timelines confirmed.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Trust bar -->
-          <div class="quote-trust-bar">
-            <div class="trust-item">
-              <strong>18+</strong><span>Years Experience</span>
-            </div>
-            <div class="trust-item">
-              <strong>550+</strong><span>Hydraulic Carriers</span>
-            </div>
-            <div class="trust-item">
-              <strong>350+</strong><span>Cities Served</span>
-            </div>
-            <div class="trust-item">
-              <strong>4.9★</strong><span>Customer Rating</span>
-            </div>
+            <small style="font-size: 0.78rem; color: var(--color-text-muted); margin-top: 4px;">Calculated automatically for nationwide door-to-door corridor</small>
           </div>
         </div>
 
+        <!-- Horizontal Summary & Call Action Panel (No numbers/fixed rate displayed) -->
+        <div class="calc-cta-summary-panel">
+          <div class="summary-route">
+            <h4 id="summaryRouteName">Delhi NCR &rarr; Mumbai</h4>
+            <p id="summaryDistance">Verified National Highway Corridor &bull; Express Dispatch Available</p>
+            <div class="route-badge-pill">Personalised Fleet Rate &bull; Zero Hidden Costs</div>
+          </div>
+          <div class="summary-cta-actions">
+            <a href="tel:+918190003616" class="btn btn-primary calc-phone-cta-btn" id="calcBookBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>Call Now for My Rate</span>
+            </a>
+            <a href="https://wa.me/918190003616?text=Hi%2C%20I%20need%20a%20vehicle%20transport%20quote" target="_blank" rel="noopener" class="btn quote-whatsapp-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+              </svg>
+              <span>WhatsApp Quote</span>
+            </a>
+          </div>
+        </div>
+
+        <p class="quote-sub-note">📞 <strong>Direct Fleet Desk:</strong> Call our route coordinators directly on <a href="tel:+918190003616" style="color:var(--color-accent); font-weight:700; text-decoration:none;">+91-81900 03616</a>. We confirm vehicle slot and best all-inclusive tariff in 5 minutes.</p>
+
+      </div>
+
+      <!-- Trust Reasons in 4 Horizontal Cards (all in one line on desktop) -->
+      <div class="quote-reasons-strip">
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Every Route is Unique</h4>
+          <p>Distance, road conditions, toll plazas, and highway access vary. We quote based on actual routing.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h4>Vehicle-Specific Care</h4>
+          <p>Hatchbacks, luxury SUVs, and sports cars need custom hydraulic ramp angles and soft-wheel lashings.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h4>Negotiated Fleet Tariff</h4>
+          <p>We leverage active backhaul and volume slots so your rate is always lower than a published rate.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Instant Quote in 5 Mins</h4>
+          <p>No forms, no waiting days. Our dispatch controllers confirm your slot and all-inclusive pricing immediately.</p>
+        </div>
+      </div>
+
+      <!-- Trust Badges Bar -->
+      <div class="quote-trust-bar" style="margin-top: 1.75rem;">
+        <div class="trust-item">
+          <strong>18+</strong><span>Years Experience</span>
+        </div>
+        <div class="trust-item">
+          <strong>550+</strong><span>Hydraulic Carriers</span>
+        </div>
+        <div class="trust-item">
+          <strong>350+</strong><span>Cities Served</span>
+        </div>
+        <div class="trust-item">
+          <strong>4.9★</strong><span>Customer Rating</span>
+        </div>
       </div>
     </div>
   </section>

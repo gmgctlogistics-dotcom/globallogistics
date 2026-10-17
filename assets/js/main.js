@@ -365,12 +365,7 @@ function initRateEstimator() {
     } else {
       if (fromVal === toVal) {
         if (summaryRouteName) summaryRouteName.textContent = 'Please choose different cities';
-        if (summaryDistance) summaryDistance.textContent = 'Local intracity transport requires site survey inspection';
-        if (summarySlabTag) summarySlabTag.textContent = 'Local Shifting Tariff';
-        if (summaryBaseFare) summaryBaseFare.textContent = '₹4,500';
-        if (summaryGst) summaryGst.textContent = '+ ₹810';
-        if (summaryDays) summaryDays.textContent = 'Same Day';
-        if (summaryCost) summaryCost.textContent = '₹5,310*';
+        if (summaryDistance) summaryDistance.textContent = 'Local intracity transport requires site survey inspection — call our dispatch desk';
         return;
       }
 
@@ -384,28 +379,16 @@ function initRateEstimator() {
 
     if (summaryRouteName) {
       if (isCustom) {
-        summaryRouteName.innerHTML = `Custom Route &bull; ${oneWayKm.toLocaleString('en-IN')} KM`;
+        summaryRouteName.innerHTML = `Custom Route &bull; ~${oneWayKm.toLocaleString('en-IN')} KM`;
       } else {
         summaryRouteName.innerHTML = `${fromText} &rarr; ${toText}`;
       }
     }
     if (summaryDistance) {
-      summaryDistance.textContent = `One-Way: ~${tariff.oneWayKm.toLocaleString('en-IN')} KM • Up & Down (Both Ways): ~${tariff.totalKm.toLocaleString('en-IN')} KM`;
-    }
-    if (summarySlabTag) {
-      summarySlabTag.textContent = tariff.slabLabel;
-    }
-    if (summaryBaseFare) {
-      summaryBaseFare.textContent = `₹${tariff.basePrice.toLocaleString('en-IN')}`;
-    }
-    if (summaryGst) {
-      summaryGst.textContent = `+ ₹${tariff.gstAmount.toLocaleString('en-IN')}`;
+      summaryDistance.textContent = `Transit Estimate: ~${days} • Distance: ~${oneWayKm.toLocaleString('en-IN')} KM • Fastag Tolls & Insurance Included`;
     }
     if (summaryDays) {
       summaryDays.textContent = days;
-    }
-    if (summaryCost) {
-      summaryCost.textContent = `₹${tariff.totalEstimate.toLocaleString('en-IN')}*`;
     }
   }
 
