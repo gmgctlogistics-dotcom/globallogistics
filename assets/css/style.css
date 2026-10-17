@@ -530,7 +530,7 @@ p {
     z-index: 50;
     display: inline-flex;
     align-items: center;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .navbar-main .brand-logo-img,
@@ -540,14 +540,24 @@ p {
     width: auto;
     display: block;
     object-fit: contain;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* When scrolling down, do NOT replace/place the logo into the navigation bar (Never show Image 2) */
+  /* When scrolling down, smoothly transitions into the navigation box */
   .navbar-main.scrolled .brand-logo,
   body.page-home .navbar-main.scrolled .brand-logo {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .navbar-main.scrolled .brand-logo-img,
+  body.page-home .navbar-main.scrolled .brand-logo-img {
+    height: 75px;
   }
 }
 
@@ -560,7 +570,7 @@ p {
     z-index: 50;
     display: inline-flex;
     align-items: center;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .navbar-main .brand-logo-img,
@@ -570,18 +580,28 @@ p {
     width: auto;
     display: block;
     object-fit: contain;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   body.page-home .hero-content-col {
     padding-left: 140px;
   }
 
-  /* When scrolling down, do NOT replace/place the logo into the navigation bar (Never show Image 2) */
+  /* When scrolling down, smoothly transitions into the navigation box */
   .navbar-main.scrolled .brand-logo,
   body.page-home .navbar-main.scrolled .brand-logo {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .navbar-main.scrolled .brand-logo-img,
+  body.page-home .navbar-main.scrolled .brand-logo-img {
+    height: 65px;
   }
 }
 
