@@ -519,8 +519,15 @@ p {
   }
 }
 
-/* Brand Logo: Always placed in the prominent Hero/Header location (Image 1) across ALL pages */
+/* ─── Brand Logo: ALWAYS stays at Image 1 position — NEVER moves into the navbar ─── */
+
+/* Ensure navbar overflow is visible so the logo can hang below it */
+.navbar-main {
+  overflow: visible;
+}
+
 @media (min-width: 1400px) {
+  /* Logo always at Image 1 position — below the navbar, in the hero/banner area */
   .navbar-main .brand-logo,
   body.page-home .navbar-main .brand-logo {
     position: absolute;
@@ -530,7 +537,6 @@ p {
     z-index: 50;
     display: inline-flex;
     align-items: center;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .navbar-main .brand-logo-img,
@@ -540,28 +546,28 @@ p {
     width: auto;
     display: block;
     object-fit: contain;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* When scrolling down, smoothly transitions into the navigation box */
+  /* On scroll — logo STAYS at Image 1 position. It does NOT move into the navbar. */
   .navbar-main.scrolled .brand-logo,
   body.page-home .navbar-main.scrolled .brand-logo {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    position: absolute;
+    left: calc((100vw - 1360px) / 4);
+    transform: translateX(-50%);
+    top: 130px;
+    z-index: 50;
+    display: inline-flex;
+    align-items: center;
   }
 
   .navbar-main.scrolled .brand-logo-img,
   body.page-home .navbar-main.scrolled .brand-logo-img {
-    height: 75px;
+    height: 185px;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1399px) {
+  /* Logo always at Image 1 position */
   .navbar-main .brand-logo,
   body.page-home .navbar-main .brand-logo {
     position: absolute;
@@ -570,7 +576,6 @@ p {
     z-index: 50;
     display: inline-flex;
     align-items: center;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .navbar-main .brand-logo-img,
@@ -580,28 +585,26 @@ p {
     width: auto;
     display: block;
     object-fit: contain;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   body.page-home .hero-content-col {
     padding-left: 140px;
   }
 
-  /* When scrolling down, smoothly transitions into the navigation box */
+  /* On scroll — logo STAYS at Image 1 position. It does NOT move into the navbar. */
   .navbar-main.scrolled .brand-logo,
   body.page-home .navbar-main.scrolled .brand-logo {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    position: absolute;
+    left: 2rem;
+    top: 120px;
+    z-index: 50;
+    display: inline-flex;
+    align-items: center;
   }
 
   .navbar-main.scrolled .brand-logo-img,
   body.page-home .navbar-main.scrolled .brand-logo-img {
-    height: 65px;
+    height: 130px;
   }
 }
 
